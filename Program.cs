@@ -25,7 +25,7 @@
 
                     case 2:
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splatershot Jr. \n");
+                    Console.Write("Custom Splatershot Jr. \n");
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("This is a reskin.");
                     Console.ForegroundColor = ConsoleColor.White;

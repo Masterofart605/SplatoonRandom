@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maste\\code\\SplatRandom\\SplatRandom.csproj",
+      "projectUniqueName": "C:\\Users\\maste\\code\\SplatoonRandom\\SplatRandom.csproj",
       "projectName": "SplatRandom",
-      "projectPath": "C:\\Users\\maste\\code\\SplatRandom\\SplatRandom.csproj",
+      "projectPath": "C:\\Users\\maste\\code\\SplatoonRandom\\SplatRandom.csproj",
       "packagesPath": "C:\\Users\\maste\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maste\\code\\SplatRandom\\obj\\",
+      "outputPath": "C:\\Users\\maste\\code\\SplatoonRandom\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maste\\AppData\\Roaming\\NuGet\\NuGet.Config"
