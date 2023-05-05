@@ -2,718 +2,334 @@
 {
     private static void Main(string[] args)
     {
+        Console.Clear();
+        bool altKit = true;
         Random random = new Random();
-        int weaponTypeInt = random.Next(1,12);
-        int chosenWeapon = 0;
+        int weaponTypeInt = 0;
+        int numberOfPlayers = 1;
         bool freshStars = true;
-        weaponType weaponTypeToo = weaponType.Null;
-        Console.WriteLine("");
-        switch(weaponTypeInt){
-            case 1:
-                weaponTypeToo = weaponType.Shooter;
-                chosenWeapon = random.Next(1,20);
-                Console.Write("Your weapon is the shooter: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splatershot Jr. \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
 
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Custom Splatershot Jr. \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
+        // Console.WriteLine("Which Mode do you want to use?");
+        // Console.WriteLine("1:By weapon type");
+        // Console.WriteLine("2:By list");
+        // Console.WriteLine("3:Auto weighted");
+        // Console.WriteLine("4:Self weighted");
 
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splatershot \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
 
-                    case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Tentatek Splatershot \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splatershot Pro \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 6:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Forge Splatershot Pro \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 7:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splattershot Nova \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 8:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splash-o-matic \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 9:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Sploosh-o-matic \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 10:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Aerospray MG \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 11:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Aerospray RG \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 12:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Hero Shot Replica \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 13:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(".52 Gal \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 14:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(".96 Gal \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 15:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("L-3 Nozzlenose \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 16:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("H-3 Nozzlenose \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 17:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("N-ZAP '85 \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 18:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Jet Squelcher \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 19:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Squeezer \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 2:
-                weaponTypeToo = weaponType.Roller;
-                chosenWeapon = random.Next(1,7);
-                Console.Write("Your weapon is the roller: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Carbon Roller \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 3 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Carbon Roller Deco \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 2 star(s) of freshness");
-                    }
-                    break;
-
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splat Roller \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 2 star(s) of freshness");
-                    }
-                    break;
-
-                    case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Dynamo Roller \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 2 star(s) of freshness");
-                    }
-                    break;
-
-                    case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Flingza Roller \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 6:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Big Swig Roller \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 3:
-                weaponTypeToo = weaponType.Charger;
-                chosenWeapon = random.Next(1,9);
-                Console.Write("Your weapon is the charger: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splat Charger \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splaterscope \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("E-liter 4k \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("E-liter 4k Scope \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Classic Squiffer \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 6:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Bamboozler 14 mk I \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 7:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Goo Tuber \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 8:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Snipewriter 5H \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 4:
-                weaponTypeToo = weaponType.Slosher;
-                chosenWeapon = random.Next(1,7);
-                Console.Write("Your weapon is the slosher: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Slosher \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Slosher Deco \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Tri-Slosher \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 3 star(s) of freshness");
-                    }
-                    break;
-
-                    case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Sloshing Machine \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 2 star(s) of freshness");
-                    }
-                    break;
-
-                    case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Bloblobber \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 4 star(s) of freshness");
-                    }
-                    break;
-
-                    case 6:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Explosher \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 5:
-                weaponTypeToo = weaponType.Splatling;
-                chosenWeapon = random.Next(1,7);
-                Console.Write("Your weapon is the splatling: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Mini Splatling \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Zink Mini Splatling \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-                    
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Heavy Splatling \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Hydra Splatling \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-                    
-                    case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Nautilus 47 \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 6:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Ballpoint Splatling \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 6:
-                weaponTypeToo = weaponType.Daulies;
-                chosenWeapon = random.Next(1,7);
-                Console.Write("Your weapon is the dualies: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splat Dualies \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Dapple Dualies \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Dapple Dualies Nouveau \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Glooga Dualies \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Dualie Squelchers \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 6:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Dark Tetra Dualies \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 7:
-                weaponTypeToo = weaponType.Brella;
-                chosenWeapon = random.Next(1,4);
-                Console.Write("Your weapon is the brella: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splat Brella \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Tenta Brella \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Undercover Brella \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 8:
-                weaponTypeToo = weaponType.Blaster;
-                chosenWeapon = random.Next(1,8);
-                Console.Write("Your weapon is the blaster: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Luna Blaster \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Luna Blaster Neo \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Blaster \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Range Blaster \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Rapid Blaster \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 6:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Rapid Blaster Pro \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 7:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Clash Blaster \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 9:
-                weaponTypeToo = weaponType.Brush;
-                chosenWeapon = random.Next(1,4);
-                Console.Write("Your weapon is the brush: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Inkbrush \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 2 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Inkbrush Nouveau \n");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("This is a reskin.");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-
-                    case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Octobrush \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 0 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 10:
-                weaponTypeToo = weaponType.Stringer;
-                chosenWeapon = random.Next(1,3);
-                Console.Write("Your weapon is the stringer: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Tri-Stringer \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("REEF-LUX 450 \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            case 11:
-                weaponTypeToo = weaponType.Splatna;
-                chosenWeapon = random.Next(1,3);
-                Console.Write("Your weapon is the splatana: ");
-                switch(chosenWeapon){
-                    case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splatana Stamper \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-
-                    case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("Splatana Wiper \n");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    if (freshStars == true){
-                        Console.WriteLine("the weapon has 1 star(s) of freshness");
-                    }
-                    break;
-                }
-            break;
-            default:
-                Console.WriteLine("You should not see this");
-            break;
+        
+        Console.WriteLine("Do you want to have Alt Kits?");
+        char Input = Console.ReadKey(true).KeyChar;
+        if (Input == 'n'){
+            altKit = false;
         }
-        Console.WriteLine(" ");
+        
+
+
+
+        List<string> players = new List<string>();
+        Console.WriteLine("How many players are participating?");
+        numberOfPlayers = Convert.ToInt32(Console.ReadLine());
+        for (int i = 0; i < numberOfPlayers; i++)
+        {
+            Console.WriteLine("Please give your name");
+            string entry = Console.ReadLine();
+            players.Add(entry);
+        }
+        while (true)
+        {
+            weaponTypeInt = random.Next(1, 12);
+            foreach (string thing in players)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write($"{thing}");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("'s Weapon is:");
+                ByWeaponType(altKit);
+                Console.WriteLine("--------------------");
+            }
+            Console.WriteLine(" ");
+            Console.WriteLine("Press any key to go again, and N to exit");
+            Console.WriteLine(" ");
+            char YNentry = Console.ReadKey(true).KeyChar;
+            if (YNentry == 'N' || YNentry == 'n')
+            {
+                break;
+            }
+        }
     }
-    public enum weaponType { Shooter, Roller, Charger, Slosher, Splatling, Daulies, Brella, Blaster, Brush, Stringer, Splatna, Null}
+
+    public static int GetUserINTput()
+    {
+        try
+        {
+            string stringInput = Console.ReadLine();
+            int intInput = Convert.ToInt32(stringInput);
+            return intInput;
+        }
+        catch
+        {
+            Console.WriteLine("Please Input a number");
+            return GetUserINTput();
+        }
+    }
+    public static List<string> constructWeaponList(bool DoReKit)
+    {
+        List<string> weaponList = new List<string>();
+        List<string> inetermediateList = new List<string>(File.ReadAllLines("Weapons/Blasters"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/BlastersReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Brellas"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/BrellasReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Brushes"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/BrushesReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Chargers"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/ChargersReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Dualies"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/DualiesReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Rollers"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/RollersReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Shooters"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/ShootersReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Sloshers"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/SloshersReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Splatana"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/SplatanaReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Splatlings"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/SplatlingsReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        inetermediateList = new List<string>(File.ReadAllLines("Weapons/Stringers"));
+        foreach (string thing in inetermediateList)
+        {
+            weaponList.Add(thing);
+        }
+        if (DoReKit == true)
+        {
+            inetermediateList = new List<string>(File.ReadAllLines("Weapons/StringersReKit"));
+            foreach (string thing in inetermediateList)
+            {
+                weaponList.Add(thing);
+            }
+        }
+        return weaponList;
+    }
+    public static void ByWeaponType(bool DoAltKit = true)
+    {
+        Random random = new Random();
+        int weaponTypeInt = random.Next(1, 12);
+        switch (weaponTypeInt)
+        {
+            case 1:
+                //Shooter
+                ByWeaponTypePrint("Weapons/Shooters","Weapons/ShootersReKit",DoAltKit);
+                break;
+            case 2:
+                //roller
+                ByWeaponTypePrint("Weapons/Rollers","Weapons/RollersReKit",DoAltKit);
+                break;
+            case 3:
+                //charger
+                ByWeaponTypePrint("Weapons/Chargers","Weapons/ChargersReKit",DoAltKit);
+                break;
+            case 4:
+                //slosher
+                ByWeaponTypePrint("Weapons/Sloshers","Weapons/SloshersReKit",DoAltKit);
+                break;
+            case 5:
+                //splatlings   
+                ByWeaponTypePrint("Weapons/Splatlings","Weapons/SplatlingsReKit",DoAltKit); 
+                break;
+            case 6:
+                //dualies 
+                ByWeaponTypePrint("Weapons/Dualies","Weapons/DualiesReKit",DoAltKit);  
+                break;
+            case 7:
+                //brella
+                ByWeaponTypePrint("Weapons/Brellas","Weapons/BrellasReKit",DoAltKit);
+                break;
+            case 8:
+                //blaster
+                ByWeaponTypePrint("Weapons/Blasters","Weapons/BlastersReKit",DoAltKit);
+                break;
+            case 9:
+                ByWeaponTypePrint("Weapons/Brushes","Weapons/BrushesReKit",DoAltKit);
+                break;
+            case 10:
+                //stringer
+                ByWeaponTypePrint("Weapons/Stringers","Weapons/StringersReKit",DoAltKit);
+                break;
+            case 11:
+                //splatana
+                ByWeaponTypePrint("Weapons/Splatana","Weapons/SplatanaReKit",DoAltKit);
+                break;
+        }
+        Console.ForegroundColor = ConsoleColor.White;
+    }
+
+
+
+    //print funciton
+    public static void ByWeaponTypePrint(string fileName, string KitFileName, bool DoAltKit)
+    {
+        Random random = new Random();
+        List<string> LeBruh = new List<string>(File.ReadAllLines(fileName));
+        List<string> numAltKits = new List<string>();
+        int checkKit = LeBruh.Count();
+        int incerementer = 0;
+        foreach (var thing in new List<string>(LeBruh))
+        {
+            string[] splitEntry = thing.Split('_');
+            if (splitEntry.Length > 1)
+            {
+                LeBruh[incerementer] = splitEntry[0];
+                numAltKits.Add(splitEntry[1]);
+            }
+            else
+            {
+                numAltKits.Add(" ");
+            }
+            incerementer++;
+        }
+        if (DoAltKit == true)
+        {
+            LeBruh.AddRange(File.ReadAllLines(KitFileName));
+        }
+        int num = random.Next(0, LeBruh.Count);
+        if (num < checkKit)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+        }
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+        }
+        Console.Write($" {LeBruh[num]}");
+        if (DoAltKit == false)
+        {
+            if (numAltKits[num] != " ")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.Write("(");
+                Console.Write(numAltKits[num]);
+                Console.Write(")");
+            }
+        }
+        Console.Write("\n");
+    }
+
+
+
+
+
+
+
+
+    public enum weaponType { Shooter, Roller, Charger, Slosher, Splatling, Daulies, Brella, Blaster, Brush, Stringer, Splatna, Null }
 }
