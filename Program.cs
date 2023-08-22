@@ -4,6 +4,7 @@
     {
         Console.Clear();
         bool altKit = true;
+        bool gearAbilitys = false;
         Random random = new Random();
         int weaponTypeInt = 0;
         int numberOfPlayers = 1;
@@ -15,37 +16,67 @@
         // Console.WriteLine("3:Auto weighted");
         // Console.WriteLine("4:Self weighted");
 
-
+    
         
-        Console.WriteLine("Do you want to have Alt Kits?");
+        Console.WriteLine("Do you want to have Alt Kits?  (y/n)");
         char Input = Console.ReadKey(true).KeyChar;
         if (Input == 'n'){
             altKit = false;
         }
+        Console.WriteLine("Will any players do random gear abilitys?  (y/n)");
+        Input = Console.ReadKey(true).KeyChar;
+        if (Input == 'y'){
+            gearAbilitys = true;
+        }
+        
+
+      
         
 
 
 
-        List<string> players = new List<string>();
+        List<(string,bool)> players = new List<(string,bool)>();
         Console.WriteLine("How many players are participating?");
         numberOfPlayers = Convert.ToInt32(Console.ReadLine());
+        if (numberOfPlayers > 1)
+        {
+            freshStars = false;
+        }
+        bool gear = false;
         for (int i = 0; i < numberOfPlayers; i++)
         {
             Console.WriteLine("Please give your name");
             string entry = Console.ReadLine();
-            players.Add(entry);
+            if (gearAbilitys == true){
+                gear = true;
+            }
+            players.Add((entry,gear));
         }
+        
         while (true)
         {
             weaponTypeInt = random.Next(1, 12);
-            foreach (string thing in players)
+            foreach ((string,bool) thing in players)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write($"{thing}");
+                Console.Write($"{thing.Item1}");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("'s Weapon is:");
-                ByWeaponType(altKit);
-                Console.WriteLine("--------------------");
+                ByWeaponType(altKit,freshStars);
+                if (thing.Item2 == true)
+                {  
+                    (string,ConsoleColor) abilityOutput = constructAbilitysList(1,false);
+                    Console.ForegroundColor = abilityOutput.Item2;
+                    Console.Write($"{abilityOutput.Item1} \n");
+                    (string,ConsoleColor) abilityOutput2 = constructAbilitysList(2,false);
+                    Console.ForegroundColor = abilityOutput2.Item2;
+                    Console.Write($"{abilityOutput2.Item1} \n");
+                    (string,ConsoleColor) abilityOutput3 = constructAbilitysList(3,false);
+                    Console.ForegroundColor = abilityOutput3.Item2;
+                    Console.Write($"{abilityOutput3.Item1} \n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine("---------------------------------------");
             }
             Console.WriteLine(" ");
             Console.WriteLine("Press any key to go again, and N to exit");
@@ -220,7 +251,52 @@
         }
         return weaponList;
     }
-    public static void ByWeaponType(bool DoAltKit = true)
+    public static (string,ConsoleColor) constructAbilitysList(int part,bool specialAbilitys = true){
+        List<(string,ConsoleColor)> abilityList = new List<(string,ConsoleColor)>();
+        abilityList.Add(("Ink Saver (Main)",ConsoleColor.Yellow));
+        abilityList.Add(("Ink Saver (Sub)",ConsoleColor.DarkBlue));
+        abilityList.Add(("Ink Recovery Up",ConsoleColor.Green));
+        abilityList.Add(("Run Speed Up",ConsoleColor.Magenta));
+        abilityList.Add(("Swim Speed Up",ConsoleColor.Magenta));
+        abilityList.Add(("Special Charge Up",ConsoleColor.Cyan));
+        abilityList.Add(("Special Saver",ConsoleColor.Cyan));
+        abilityList.Add(("Special Power Up",ConsoleColor.Green));
+        abilityList.Add(("Quick Respawn",ConsoleColor.Green));
+        abilityList.Add(("Quick Super Jump",ConsoleColor.Yellow));
+        abilityList.Add(("Sub Power Up",ConsoleColor.Green));
+        abilityList.Add(("Ink Resistance Up",ConsoleColor.Magenta));
+        abilityList.Add(("Sub Resistance Up",ConsoleColor.Magenta));
+        abilityList.Add(("Intensify Action",ConsoleColor.Yellow));
+        List<string> intermediateList = new List<string>();
+        if(specialAbilitys == true){
+            if(part == 1){
+                intermediateList = new List<string>(File.ReadAllLines("Abilities/Hat"));
+                foreach (string thing in intermediateList)
+                {
+                    abilityList.Add((thing,ConsoleColor.Red));
+                }
+            }
+            if(part == 2){
+                intermediateList = new List<string>(File.ReadAllLines("Abilities/Shirt"));
+                foreach (string thing in intermediateList)
+                {
+                    abilityList.Add((thing,ConsoleColor.Red));
+                }
+            }
+            if(part == 1){
+                intermediateList = new List<string>(File.ReadAllLines("Abilities/Shoes"));
+                foreach (string thing in intermediateList)
+                {
+                    abilityList.Add((thing,ConsoleColor.Red));
+                }
+            }
+        }
+        Random random = new Random();
+        int item = random.Next(0,abilityList.Count);
+        return abilityList.ElementAt(item);
+    }
+    
+    public static void ByWeaponType(bool DoAltKit = true, bool freshStarsIn = true)
     {
         Random random = new Random();
         int weaponTypeInt = random.Next(1, 12);
@@ -228,46 +304,46 @@
         {
             case 1:
                 //Shooter
-                ByWeaponTypePrint("Weapons/Shooters","Weapons/ShootersReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Shooters","Weapons/ShootersReKit",DoAltKit,freshStarsIn);
                 break;
             case 2:
                 //roller
-                ByWeaponTypePrint("Weapons/Rollers","Weapons/RollersReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Rollers","Weapons/RollersReKit",DoAltKit,freshStarsIn);
                 break;
             case 3:
                 //charger
-                ByWeaponTypePrint("Weapons/Chargers","Weapons/ChargersReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Chargers","Weapons/ChargersReKit",DoAltKit,freshStarsIn);
                 break;
             case 4:
                 //slosher
-                ByWeaponTypePrint("Weapons/Sloshers","Weapons/SloshersReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Sloshers","Weapons/SloshersReKit",DoAltKit,freshStarsIn);
                 break;
             case 5:
                 //splatlings   
-                ByWeaponTypePrint("Weapons/Splatlings","Weapons/SplatlingsReKit",DoAltKit); 
+                ByWeaponTypePrint("Weapons/Splatlings","Weapons/SplatlingsReKit",DoAltKit,freshStarsIn); 
                 break;
             case 6:
                 //dualies 
-                ByWeaponTypePrint("Weapons/Dualies","Weapons/DualiesReKit",DoAltKit);  
+                ByWeaponTypePrint("Weapons/Dualies","Weapons/DualiesReKit",DoAltKit,freshStarsIn);  
                 break;
             case 7:
                 //brella
-                ByWeaponTypePrint("Weapons/Brellas","Weapons/BrellasReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Brellas","Weapons/BrellasReKit",DoAltKit,freshStarsIn);
                 break;
             case 8:
                 //blaster
-                ByWeaponTypePrint("Weapons/Blasters","Weapons/BlastersReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Blasters","Weapons/BlastersReKit",DoAltKit,freshStarsIn);
                 break;
             case 9:
-                ByWeaponTypePrint("Weapons/Brushes","Weapons/BrushesReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Brushes","Weapons/BrushesReKit",DoAltKit,freshStarsIn);
                 break;
             case 10:
                 //stringer
-                ByWeaponTypePrint("Weapons/Stringers","Weapons/StringersReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Stringers","Weapons/StringersReKit",DoAltKit,freshStarsIn);
                 break;
             case 11:
                 //splatana
-                ByWeaponTypePrint("Weapons/Splatana","Weapons/SplatanaReKit",DoAltKit);
+                ByWeaponTypePrint("Weapons/Splatana","Weapons/SplatanaReKit",DoAltKit,freshStarsIn);
                 break;
         }
         Console.ForegroundColor = ConsoleColor.White;
@@ -276,7 +352,7 @@
 
 
     //print funciton
-    public static void ByWeaponTypePrint(string fileName, string KitFileName, bool DoAltKit)
+    public static void ByWeaponTypePrint(string fileName, string KitFileName, bool DoAltKit, bool freshStarsPrint)
     {
         Random random = new Random();
         List<string> LeBruh = new List<string>(File.ReadAllLines(fileName));
@@ -301,6 +377,16 @@
         {
             LeBruh.AddRange(File.ReadAllLines(KitFileName));
         }
+        List<string> stars = new List<string>();
+        incerementer = 0;
+        foreach(var thing in new List<string>(LeBruh)){
+            string[] splitlist = thing.Split('*');
+            LeBruh[incerementer] = splitlist[1];
+            stars.Add(splitlist[0]);
+            incerementer++;
+        }
+
+
         int num = random.Next(0, LeBruh.Count);
         if (num < checkKit)
         {
@@ -322,6 +408,36 @@
             }
         }
         Console.Write("\n");
+        if (freshStarsPrint == true)
+        {
+            switch(stars[num]){
+                case "0":
+                default:
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine();
+                break;
+                case "1":
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("*");
+                break;
+                case "2":
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("**");
+                break;
+                case "3":
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("***");
+                break;
+                case "4":
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("****");
+                break;
+                case "5":
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("*****");
+                break;
+            }
+        }
     }
 
 
