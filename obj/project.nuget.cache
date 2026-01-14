@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C1v/QmcLJdlgPH9tcXZL8hnZFND9ttj9oC4tP/H5gmEpViCxchUV8O9sQgvboS/aWrg/4czj7uHUkjF2/vROrQ==",
+  "dgSpecHash": "gfe74juyHDk=",
   "success": true,
   "projectFilePath": "C:\\Users\\maste\\code\\SplatoonRandom\\SplatRandom.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\maste\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\maste\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\maste\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\maste\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

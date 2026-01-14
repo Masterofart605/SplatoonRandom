@@ -1,0 +1,15 @@
+C:\Users\maste\code\SplatoonRandom\bin\Debug\net10.0\SplatRandom.exe
+C:\Users\maste\code\SplatoonRandom\bin\Debug\net10.0\SplatRandom.deps.json
+C:\Users\maste\code\SplatoonRandom\bin\Debug\net10.0\SplatRandom.runtimeconfig.json
+C:\Users\maste\code\SplatoonRandom\bin\Debug\net10.0\SplatRandom.dll
+C:\Users\maste\code\SplatoonRandom\bin\Debug\net10.0\SplatRandom.pdb
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.AssemblyInfoInputs.cache
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.AssemblyInfo.cs
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.csproj.CoreCompileInputs.cache
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.sourcelink.json
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.dll
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\refint\SplatRandom.dll
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.pdb
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\SplatRandom.genruntimeconfig.cache
+C:\Users\maste\code\SplatoonRandom\obj\Debug\net10.0\ref\SplatRandom.dll
